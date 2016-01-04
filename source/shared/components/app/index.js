@@ -1,7 +1,20 @@
-import createTitle from 'shared/components/title/index.js';
+import React from 'react';
+import Title from '../title/index.js';
 
-export default React => ({ title }) => {
-  const Title = createTitle(React);
-
-  return <Title title={ title }/>;
+export default class extends React.Component {
+  render() {
+    console.log(this.props);
+    return (
+        <div>
+          <Title 
+            title={ this.props.title }
+           />
+           <ul>
+           {this.props.names.map(name =>
+               <li>{name}</li>
+           )}
+           </ul>
+        </div>
+        );
+  }
 };

@@ -5,16 +5,17 @@ import renderLayout from './render-layout.js';
 
 const title = settings.TITLE;
 
-const props = {
-  title
+const initialProps = {
+  title: title,
+  names: ['rob','travis','rouzbeh']
 };
 
-const rootMarkup = render(props);
+const rootMarkup = render(initialProps);
 
 // This will be rendered into the HTML to pass data to the client.
 const payload = `
   var payload = {
-    title: '${ props.title }'
+    title: '${ initialProps.title }'
   };
 `;
 
